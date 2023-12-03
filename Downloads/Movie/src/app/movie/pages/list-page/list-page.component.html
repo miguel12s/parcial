@@ -1,0 +1,22 @@
+
+<div class="d-flex justify-content-center">
+    <mat-paginator 
+          [pageSize]="this.pageSize" 
+          [length]="movies.length"
+          (page)="changePage($event)"
+          [pageSizeOptions]="[5, 10, 15, 20]"
+          aria-label="Select page">
+    </mat-paginator></div>
+<section class="products" >
+    
+    <!-- <app-product *ngFor="let product  of products|filtro:pageInit:searche " [product]="product"
+      (addCartToClic)="addCartToClick($event)" /> -->
+     
+      <app-movie *ngFor="let movie of paginatedMovies" [product]="movie" (addCart)="addCart($event)"></app-movie>
+      
+     
+  </section>
+
+
+
+

@@ -1,0 +1,19 @@
+
+<mat-toolbar class="d-flex gap-4" style="position: relative;" color="primary" >
+    <a style="cursor: pointer;"  (click)="home()">My store</a>
+    <a style="cursor: pointer;text-decoration: underline;" (click)="logout()">Logout</a>
+    <div class="container d-flex w-100 justify-content-end" style="cursor: pointer;" (click)="goToShopping()" >
+    <ng-container   *ngIf="{ total: total$ | async, quantity: quantity$ | async } as dataCart">
+        <ng-container *ngIf="dataCart.total">
+          <mat-icon  >add_shopping_cart</mat-icon>
+        {{dataCart.total | currency}}
+        ({{dataCart.quantity}})
+        </ng-container>
+    
+      </ng-container>
+    </div>
+
+
+
+</mat-toolbar>
+<router-outlet/>
